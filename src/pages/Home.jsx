@@ -1,7 +1,12 @@
 import React from "react";
+import NewArrivals from "../components/product/NewArrivals";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <section className="text-center py-12">
+      <NewArrivals />
+    </section>
+  );
 }
 
 export default Home;
