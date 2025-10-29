@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useProducts } from "../context/ProductContext";
 import { useCart } from "../context/CartContext";
 
@@ -17,10 +18,10 @@ function Shop() {
       <h2 className="text-xl font-small mb-6 text-center">NEW ARRIVALS</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <a
-            href=""
+          <Link
+            to={`/product/${product.id}`}
             key={product.id}
-            className="p-4 flex flex-col justify-between"
+            className="p-4 flex flex-col justify-between transition-shadow"
           >
             <img
               src={product.image}
@@ -34,7 +35,7 @@ function Shop() {
             <p className="text-gray-900 font-semibold text-center text-sm mb-4">
               ${product.price}
             </p>
-          </a>
+          </Link>
         ))}
       </div>
     </section>

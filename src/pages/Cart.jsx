@@ -14,18 +14,19 @@ function Cart() {
 
   return (
     <section className="max-w-4xl mx-auto py-10 px-4">
-      <h2 className="text-3xl font-bold mb-6 text-center">Your Cart</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center">
+        Your Bag <span>({cart.length})</span>
+      </h2>
 
       {cart.length === 0 ? (
         <p className="text-center text-gray-500">
-          Your cart is empty.{" "}
+          Your bag is empty.{" "}
           <Link
             to="/shop"
-            className="text-blue-600 underline hover:text-blue-800"
+            className="flex justify-center text-red-600 hover:text-red-800 py-5"
           >
-            Shop now
+            Shop all
           </Link>
-          .
         </p>
       ) : (
         <div>

@@ -19,3 +19,13 @@ footer {
 footer a {
   color: #df1529;
 }
+
+/* Product Details */
+
+.product_details_price {
+  font-size: 15px;
+}
+
+.product_details_description {
+  font-size: 13px;
+}
