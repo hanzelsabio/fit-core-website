@@ -1,6 +1,21 @@
 @import "tailwindcss";
 
 /* Custom global styles */
-body {
-  @apply bg-gray-50 text-gray-900 font-sans;
+
+/* Announcement Section */
+
+.announcement {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Footer Section */
+
+footer {
+  font-size: 13px;
+}
+
+footer a {
+  color: #df1529;
 }

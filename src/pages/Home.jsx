@@ -1,10 +1,10 @@
 import React from "react";
-import NewArrivals from "../components/product/NewArrivals";
+import Shop from "../pages/Shop";
 
 function Home() {
   return (
     <section className="text-center py-12">
-      <NewArrivals />
+      <Shop />
     </section>
   );
 }

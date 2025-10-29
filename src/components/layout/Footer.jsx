@@ -1,9 +1,13 @@
 import React from "react";
+import "../../assets/styles/globals.css";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 text-center py-6 mt-10">
-      <p>© {new Date().getFullYear()} GymStore. All rights reserved.</p>
+    <footer className="bg-white-900 text-center py-6 mt-10">
+      <p>
+        © {new Date().getFullYear()} | Fit Core | All rights reserved | Stay Fit
+      </p>
+      Designed by <a href="https://hanzelsabio.vercel.app/">Hanzel Sabio</a>
     </footer>
   );
 }

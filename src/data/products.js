@@ -4,8 +4,7 @@ const products = [
     name: "Wireless Headphones",
     description: "High-quality Bluetooth headphones with noise cancellation.",
     price: 99.99,
-    image:
-      "https://pngtree.com/freepng/modern-black-wireless-headphones_20503479.html",
+    image: "https://picsum.photos/400/300?random=1",
   },
   {
     id: 2,
