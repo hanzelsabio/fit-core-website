@@ -46,7 +46,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow relative z-50">
+    <header className="bg-white relative z-50">
       <nav className="container mx-auto relative flex items-center justify-between py-8 px-6">
         {/* Left side */}
         <div className="flex-1 flex items-center gap-6">

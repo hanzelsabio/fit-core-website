@@ -1,6 +1,7 @@
 import BlackLogoTee from "../assets/images/black-logo-shirt.png";
 import WhiteLogoTee from "../assets/images/white-logo-shirt.png";
 import RedLogoTee from "../assets/images/red-logo-shirt.png";
+import NoImageFound from "../assets/images/no-image-found.png";
 
 const products = [
   {

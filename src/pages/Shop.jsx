@@ -26,7 +26,7 @@ function Shop() {
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-60 object-contain mb-4"
+              className="w-full h-48 object-contain mb-4"
             />
             {/* Product Info */}
             <h3 className="text-gray-800 font-medium text-center text-sm mb-2 line-clamp-2">

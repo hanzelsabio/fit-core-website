@@ -8,7 +8,10 @@ export default function Footer() {
         © {new Date().getFullYear()} | Hype Plus | All rights reserved | Stay
         Fit
       </p>
-      Designed by <a href="https://hanzelsabio.vercel.app/">Hanzel Sabio</a>
+      Designed by{" "}
+      <a href="https://hanzelsabio.vercel.app/" target="_blank">
+        Hanzel Sabio
+      </a>
     </footer>
   );
 }
