@@ -15,18 +15,15 @@ export default function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[80vh]">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white p-6 shadow rounded"
-      >
-        <h1 className="text-2xl font-bold mb-4 text-center">Register</h1>
+    <div className="flex justify-center items-center min-h-[70vh]">
+      <form onSubmit={handleSubmit} className="w-full max-w-md p-6">
+        <h1 className="text-2xl mb-10 text-center uppercase">Sign Up</h1>
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border p-2 rounded mb-3"
+          className="w-full border outline-none p-2 mb-5"
           required
         />
         <input
@@ -34,15 +31,15 @@ export default function Register() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border p-2 rounded mb-4"
+          className="w-full border outline-none p-2 mb-5"
           required
         />
-        <button className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
-          Register
+        <button className="w-full bg-black text-white py-2 hover:bg-gray-900">
+          Create Account
         </button>
         <p className="text-sm text-center mt-3">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-600">
+          <Link to="/login" className="underline underline-offset-3">
             Login
           </Link>
         </p>

@@ -1,38 +1,97 @@
+import BlackLogoTee from "../assets/images/black-logo-shirt.png";
+import WhiteLogoTee from "../assets/images/white-logo-shirt.png";
+import RedLogoTee from "../assets/images/red-logo-shirt.png";
+
 const products = [
   {
     id: 1,
-    name: "Wireless Headphones",
-    description: "High-quality Bluetooth headphones with noise cancellation.",
-    price: 99.99,
-    image: "https://picsum.photos/400/300?random=1",
+    title: "Black Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+    category: "Oversized Tee",
+    image: BlackLogoTee,
   },
   {
     id: 2,
-    name: "Smartwatch",
-    description: "Stylish smartwatch with fitness tracking and notifications.",
-    price: 129.99,
-    image: "https://picsum.photos/400/300?random=2",
+    title: "White Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+    category: "Oversized Tee",
+    image: WhiteLogoTee,
   },
   {
     id: 3,
-    name: "Laptop Sleeve",
-    description: "Protective sleeve for laptops up to 15 inches.",
-    price: 29.99,
-    image: "https://picsum.photos/400/300?random=3",
+    title: "Red Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+    category: "Oversized Tee",
+    image: RedLogoTee,
   },
   {
     id: 4,
-    name: "Wireless Mouse",
-    description: "Ergonomic wireless mouse with fast scrolling.",
-    price: 24.99,
-    image: "https://picsum.photos/400/300?random=4",
+    title: "White Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+    category: "Oversized Tee",
+    image: WhiteLogoTee,
   },
   {
     id: 5,
-    name: "USB-C Charger",
-    description: "Fast 65W USB-C charger compatible with all devices.",
-    price: 39.99,
-    image: "https://picsum.photos/400/300?random=5",
+    title: "Black Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+    category: "Oversized Tee",
+    image: BlackLogoTee,
+  },
+  {
+    id: 6,
+    title: "White Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+    category: "Oversized Tee",
+    image: WhiteLogoTee,
+  },
+  {
+    id: 7,
+    title: "Black Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+    category: "Oversized Tee",
+    image: BlackLogoTee,
+  },
+  {
+    id: 8,
+    title: "White Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+    category: "Oversized Tee",
+    image: WhiteLogoTee,
+  },
+  {
+    id: 9,
+    title: "Black Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+    category: "Oversized Tee",
+    image: BlackLogoTee,
+  },
+  {
+    id: 10,
+    title: "White Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+    category: "Oversized Tee",
+    image: WhiteLogoTee,
   },
 ];
 

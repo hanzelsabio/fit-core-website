@@ -1,32 +1,27 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import productsData from "../data/products"; // ⬅️ import your local data
 
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
+  // Simulate API loading delay (optional)
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        const res = await fetch("https://fakestoreapi.com/products");
-        if (!res.ok) throw new Error("Failed to fetch products");
-        const data = await res.json();
-        setProducts(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
+    const loadData = async () => {
+      setLoading(true);
+      setTimeout(() => {
+        setProducts(productsData);
         setLoading(false);
-      }
+      }, 500);
     };
 
-    fetchProducts();
+    loadData();
   }, []);
 
   return (
-    <ProductContext.Provider value={{ products, loading, error }}>
+    <ProductContext.Provider value={{ products, loading }}>
       {children}
     </ProductContext.Provider>
   );

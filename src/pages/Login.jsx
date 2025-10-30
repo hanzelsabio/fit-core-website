@@ -15,18 +15,15 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[80vh]">
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white p-6 shadow rounded"
-      >
-        <h1 className="text-2xl font-bold mb-4 text-center">Login</h1>
+    <div className="flex justify-center items-center min-h-[70vh]">
+      <form onSubmit={handleSubmit} className="w-full max-w-md p-6">
+        <h1 className="text-2xl mb-10 text-center">LOGIN</h1>
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border p-2 rounded mb-3"
+          className="w-full border outline-none p-2 mb-5"
           required
         />
         <input
@@ -34,16 +31,19 @@ export default function Login() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border p-2 rounded mb-4"
+          className="w-full border outline-none p-2 mb-5"
           required
         />
-        <button className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+        <p className="text-sm text-center underline underline-offset-3 mb-5">
+          <Link to="/register">Forgot your password? </Link>
+        </p>
+        <button className="w-full bg-black text-white py-2 hover:bg-gray-900">
           Login
         </button>
-        <p className="text-sm text-center mt-3">
+        <p className="text-sm text-center mt-5">
           Don’t have an account?{" "}
-          <Link to="/register" className="text-blue-600">
-            Register
+          <Link to="/register" className="underline underline-offset-3">
+            Sign up here.
           </Link>
         </p>
       </form>

@@ -11,14 +11,42 @@ import {
   Instagram,
   Facebook,
 } from "lucide-react";
+import SearchBar from "./Search";
 
 export default function Header() {
-  //   const { cart } = useCart();
   const { user } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+
+  // Example fake search function
+  const handleSearch = (query) => {
+    console.log("Searching for:", query);
+
+    // Example: Fake results (replace with actual API or context search)
+    const fakeResults = [
+      {
+        id: 1,
+        title: "Red Gym T-Shirt",
+        price: 29.99,
+        image: "/src/assets/images/red-shirt.png",
+      },
+      {
+        id: 2,
+        title: "Fitness Gloves",
+        price: 19.99,
+        image: "/src/assets/images/gloves.png",
+      },
+    ];
+
+    const filtered = fakeResults.filter((item) =>
+      item.title.toLowerCase().includes(query.toLowerCase())
+    );
+    setSearchResults(filtered);
+  };
 
   return (
-    <header className="bg-white shadow">
+    <header className="bg-white shadow relative z-50">
       <nav className="container mx-auto relative flex items-center justify-between py-8 px-6">
         {/* Left side */}
         <div className="flex-1 flex items-center gap-6">
@@ -29,27 +57,22 @@ export default function Header() {
             <Menu className="w-6 h-6" />
           </button>
 
-          <Link
-            to="/shop"
+          <button
+            onClick={() => setSearchOpen(true)}
             className="flex items-center text-gray-700 hover:text-red-600 transition"
           >
             <Search className="w-6 h-6" />
-          </Link>
+          </button>
         </div>
 
         {/* Center logo */}
         <div className="absolute left-1/2 -translate-x-1/2">
-          {/* <Link
-            to="/"
-            className="text-2xl font-bold text-red-600 tracking-wide hover:opacity-80 transition"
-          >
-            GymStore
-          </Link> */}
           <a href="/shop">
             <img
-              src="./src/assets/images/fit-core-logo.png"
-              className="w-20 h-20"
-            ></img>
+              src="./src/assets/images/hype-logo.png"
+              className="w-40"
+              alt="FitCore Logo"
+            />
           </a>
         </div>
 
@@ -60,7 +83,6 @@ export default function Header() {
             className="flex items-center hover:text-red-600 transition"
           >
             <Handbag className="w-6 h-6 mr-1" />
-            {/* <span>({cart.length})</span> */}
           </Link>
 
           {user ? (
@@ -91,7 +113,7 @@ export default function Header() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-95 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-80 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -164,6 +186,14 @@ export default function Header() {
           </a>
         </div>
       </aside>
+
+      {/* ✅ Search Bar Dropdown */}
+      <SearchBar
+        isOpen={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        onSearch={handleSearch}
+        results={searchResults}
+      />
     </header>
   );
 }
