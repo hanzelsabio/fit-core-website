@@ -45,3 +45,13 @@ footer a {
 .animate-fadeIn {
   animation: fadeIn 0.25s ease-in-out;
 }
+
+/* Product Details - Featured Products */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
