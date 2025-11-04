@@ -130,7 +130,7 @@ export default function Header() {
         <ul className="flex flex-col p-6 space-y-4 text-gray-700">
           <li>
             <Link
-              to="/"
+              to="/newarrivals"
               onClick={() => setSidebarOpen(false)}
               className="block hover:text-red-600 transition"
             >

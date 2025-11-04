@@ -3,7 +3,7 @@ import Shop from "../pages/Shop";
 
 function Home() {
   return (
-    <section className="text-center py-12">
+    <section className="text-center">
       <Shop />
     </section>
   );
