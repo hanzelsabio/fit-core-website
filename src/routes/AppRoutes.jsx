@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "../components/ProtectedRoute";
-import NewArrivals from "../components/product/NewArrivals";
+import NewArrivals from "../pages/NewArrivals";
 
 import Home from "../pages/Home";
 import Shop from "../pages/Shop";

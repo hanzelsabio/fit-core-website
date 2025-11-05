@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useProducts } from "../context/ProductContext";
 import { useCart } from "../context/CartContext";
 
-function Shop() {
+function NewArrivals() {
   const { products, loading, error } = useProducts();
   const { addToCart } = useCart();
 
@@ -15,7 +15,7 @@ function Shop() {
 
   return (
     <section className="max-w-6xl mx-auto py-10 px-4">
-      <h2 className="text-xl font-small mb-6 text-center">ALL PRODUCTS</h2>
+      <h2 className="text-xl font-small mb-6 text-center">NEW ARRIVALS</h2>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <Link
@@ -42,4 +42,4 @@ function Shop() {
   );
 }
 
-export default Shop;
+export default NewArrivals;

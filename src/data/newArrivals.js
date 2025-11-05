@@ -3,7 +3,7 @@ import WhiteLogoTee from "../assets/images/white-logo-shirt.png";
 import RedLogoTee from "../assets/images/red-logo-shirt.png";
 import NoImageFound from "../assets/images/no-image-found.png";
 
-const products = [
+const newArrivalsData = [
   {
     id: 1,
     title: "Black Logo Oversized Tee",
@@ -114,4 +114,4 @@ const products = [
   },
 ];
 
-export default products;
+export default newArrivalsData;

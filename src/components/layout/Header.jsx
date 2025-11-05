@@ -67,7 +67,7 @@ export default function Header() {
 
         {/* Center logo */}
         <div className="absolute left-1/2 -translate-x-1/2">
-          <a href="/shop">
+          <a href="/">
             <img
               src="./src/assets/images/hype-logo.png"
               className="w-40"

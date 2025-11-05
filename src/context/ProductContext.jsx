@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import productsData from "../data/products"; // ⬅️ import your local data
+import productsData from "../data/products"; // Main product list
+import newArrivalsData from "../data/newarrivals"; // New arrivals list
 
 const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [newArrivals, setNewArrivals] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // Simulate API loading delay (optional)
@@ -13,6 +15,7 @@ export const ProductProvider = ({ children }) => {
       setLoading(true);
       setTimeout(() => {
         setProducts(productsData);
+        setNewArrivals(newArrivalsData);
         setLoading(false);
       }, 500);
     };
@@ -21,7 +24,7 @@ export const ProductProvider = ({ children }) => {
   }, []);
 
   return (
-    <ProductContext.Provider value={{ products, loading }}>
+    <ProductContext.Provider value={{ products, newArrivals, loading }}>
       {children}
     </ProductContext.Provider>
   );
