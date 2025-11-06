@@ -1,6 +1,6 @@
 import React from "react";
-import Shop from "../pages/Shop";
-import NewArrivals from "./NewArrivals";
+import Shop from "./collection/Collection";
+import NewArrivals from "./collection/NewArrivals";
 
 import Hero from "../components/layout/Hero";
 

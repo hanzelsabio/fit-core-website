@@ -139,7 +139,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              to="/shop"
+              to="/collection"
               onClick={() => setSidebarOpen(false)}
               className="block hover:text-red-600 transition"
             >

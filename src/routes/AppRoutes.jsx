@@ -1,22 +1,24 @@
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "../components/ProtectedRoute";
-import NewArrivals from "../pages/NewArrivals";
+import NewArrivals from "../pages/collection/NewArrivals";
 
 import Home from "../pages/Home";
-import Shop from "../pages/Shop";
+import Collection from "../pages/collection/Collection";
 import ProductDetail from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
+import AboutPage from "../pages/About";
+import ContactPage from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 
 export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/shop" element={<Shop />} />
+      <Route path="/collection" element={<Collection />} />
       <Route path="/newarrivals" element={<NewArrivals />} />
       <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="/cart" element={<Cart />} />
@@ -31,6 +33,8 @@ export default function AppRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
