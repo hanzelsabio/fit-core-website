@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useAuth } from "../../context/AuthContext";
+import { useProducts } from "../../context/ProductContext";
 import {
   Menu,
   Search,
@@ -15,6 +16,8 @@ import SearchBar from "./Search";
 
 export default function Header() {
   const { user } = useAuth();
+  const { products } = useProducts();
+
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
@@ -24,20 +27,7 @@ export default function Header() {
     console.log("Searching for:", query);
 
     // Example: Fake results (replace with actual API or context search)
-    const fakeResults = [
-      {
-        id: 1,
-        title: "Red Gym T-Shirt",
-        price: 29.99,
-        image: "/src/assets/images/red-shirt.png",
-      },
-      {
-        id: 2,
-        title: "Fitness Gloves",
-        price: 19.99,
-        image: "/src/assets/images/gloves.png",
-      },
-    ];
+    const fakeResults = products;
 
     const filtered = fakeResults.filter((item) =>
       item.title.toLowerCase().includes(query.toLowerCase())
