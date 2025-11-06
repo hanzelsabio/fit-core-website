@@ -69,9 +69,9 @@ export default function Header() {
         <div className="absolute left-1/2 -translate-x-1/2">
           <a href="/">
             <img
-              src="./src/assets/images/hype-logo.png"
+              src="./src/assets/images/brand-logo.png"
               className="w-40"
-              alt="FitCore Logo"
+              alt="Brand Logo"
             />
           </a>
         </div>

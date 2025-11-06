@@ -23,7 +23,7 @@ export default function Newsletter() {
         <h2 className="text-small md:text-xl font-bold text-gray-800 m-2 uppercase">
           Newsletter
         </h2>
-        <p className="m-4">Receive latest update</p>
+        <p className="m-4">Receive latest updates</p>
 
         {/* Newsletter Form */}
         {submitted ? (
