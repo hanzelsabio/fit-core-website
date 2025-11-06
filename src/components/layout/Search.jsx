@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Search, X } from "lucide-react";
 
 export default function SearchBar({ isOpen, onClose, onSearch, results = [] }) {
@@ -40,6 +41,15 @@ export default function SearchBar({ isOpen, onClose, onSearch, results = [] }) {
     if (isOpen) document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
+
+  // When a result is clicked, close the search results
+  const handleResultClick = () => {
+    setTimeout(() => {
+      onClose();
+      setHasSearched(false);
+      setQuery("");
+    }, 100); // small delayv so navigaton happens smoothly
+  };
 
   if (!isOpen) return null;
 
@@ -100,20 +110,26 @@ export default function SearchBar({ isOpen, onClose, onSearch, results = [] }) {
           ) : (
             <ul className="divide-y divide-gray-100">
               {results.map((item) => (
-                <li
-                  key={item.id}
-                  className="flex items-center gap-4 p-4 hover:bg-gray-50 cursor-pointer transition"
+                <Link
+                  to={`/product/${item.id}`}
+                  onClick={handleResultClick}
+                  className="p-4 flex flex-col justify-between transition-shadow"
                 >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-16 h-16 object-contain"
-                  />
-                  <div>
-                    <p className="font-medium text-gray-800">{item.title}</p>
-                    <p className="text-sm text-gray-500">${item.price}</p>
-                  </div>
-                </li>
+                  <li
+                    key={item.id}
+                    className="flex items-center gap-4 p-4 hover:bg-gray-50 cursor-pointer transition"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-16 h-16 object-contain"
+                    />
+                    <div>
+                      <p className="font-medium text-gray-800">{item.title}</p>
+                      <p className="text-sm text-gray-500">${item.price}</p>
+                    </div>
+                  </li>
+                </Link>
               ))}
             </ul>
           )
