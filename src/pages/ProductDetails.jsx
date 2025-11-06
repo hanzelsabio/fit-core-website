@@ -1,7 +1,9 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useProducts } from "../context/ProductContext";
 import { useCart } from "../context/CartContext";
+
+import { CheckCheck } from "lucide-react";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -12,6 +14,12 @@ function ProductDetails() {
   const product = products.find((p) => String(p.id) === String(id));
   const [quantity, setQuantity] = useState(1);
   const [isFading, setIsFading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    setShowPopup(false);
+    setQuantity(1);
+  }, [id]);
 
   const increaseQuantity = () => setQuantity((prev) => prev + 1);
   const decreaseQuantity = () =>
@@ -37,12 +45,37 @@ function ProductDetails() {
     }, 300); // matches fade-out duration
   };
 
+  // Add to Cart handler with popup
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+
+    // retrigger animation if popup is already showing
+    setShowPopup(false);
+    setTimeout(() => setShowPopup(true), 10);
+
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 10000); // popup disappears after 10s
+  };
+
   return (
     <div
       className={`transition-opacity duration-300 ${
         isFading ? "opacity-0" : "opacity-100"
       }`}
     >
+      {/* Popup Notification */}
+      {showPopup && (
+        <div className="fixed top-6 right-6 bg-white text-black px-5 py-3 shadow-lg text-sm font-medium flex items-center gap-2 animate-fadeInOut z-50 border border-gray-200">
+          <span className="text-green-600">
+            <CheckCheck size={18} />
+          </span>
+          <span>
+            <strong>{quantity}×</strong> {product.title} – Added to cart!
+          </span>
+        </div>
+      )}
+
       {/* Product Details */}
       <section className="max-w-6xl mx-auto py-12 px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -86,7 +119,7 @@ function ProductDetails() {
               </div>
 
               <button
-                onClick={() => addToCart(product, quantity)}
+                onClick={handleAddToCart}
                 className="w-100 bg-black text-white px-6 py-2"
                 style={{ cursor: "pointer" }}
               >
@@ -129,6 +162,19 @@ function ProductDetails() {
           </p>
         )}
       </section>
+
+      {/* Tailwind animation */}
+      <style>
+        {`
+          @keyframes fadeInOut {
+            0%, 100% { opacity: 0; transform: translateY(-10px); }
+            10%, 90% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fadeInOut {
+            animation: fadeInOut 2.5s ease-in-out forwards;
+          }
+        `}
+      </style>
     </div>
   );
 }
