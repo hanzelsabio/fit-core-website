@@ -17,10 +17,15 @@ import SearchBar from "./Search";
 export default function Header() {
   const { user } = useAuth();
   const { products } = useProducts();
+  const { cart } = useCart();
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
+
+  // Cart Count
+  const cartCount =
+    cart?.reduce((total, item) => total + item.quantity, 0) || 0;
 
   // Example fake search function
   const handleSearch = (query) => {
@@ -66,9 +71,16 @@ export default function Header() {
         <div className="flex-1 flex justify-end items-center gap-6 text-gray-700">
           <Link
             to="/cart"
-            className="flex items-center hover:text-red-600 transition"
+            className="flex items-center hover:text-red-600 transition relative"
           >
             <Handbag className="w-6 h-6 mr-1" />
+
+            {/* Cart Count Bubble */}
+            {cartCount > 0 && (
+              <span className="absolute top-3 left-3 bg-gray-900 text-white text-[8px] font-semibold rounded-full px-1.5">
+                {cartCount}
+              </span>
+            )}
           </Link>
 
           {user ? (
