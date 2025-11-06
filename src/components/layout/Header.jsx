@@ -68,11 +68,7 @@ export default function Header() {
         {/* Center logo */}
         <div className="absolute left-1/2 -translate-x-1/2">
           <a href="/">
-            <img
-              src="/assets/brand-logo.png"
-              className="w-40"
-              alt="Brand Logo"
-            />
+            <img src="/brand-logo.png" className="w-40" alt="Brand Logo" />
           </a>
         </div>
 
