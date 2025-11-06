@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import productsData from "../data/products"; // Main product list
-import newArrivalsData from "../data/newarrivals"; // New arrivals list
+import newArrivalsData from "../data/newArrivals"; // New arrivals list
 
 const ProductContext = createContext();
 
