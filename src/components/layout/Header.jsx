@@ -69,7 +69,7 @@ export default function Header() {
         <div className="absolute left-1/2 -translate-x-1/2">
           <a href="/">
             <img
-              src="/src/assets/images/brand-logo.png"
+              src="/images/brand-logo.png"
               className="w-40"
               alt="Brand Logo"
             />
@@ -187,7 +187,7 @@ export default function Header() {
         </div>
       </aside>
 
-      {/* ✅ Search Bar Dropdown */}
+      {/* Search Bar Dropdown */}
       <SearchBar
         isOpen={searchOpen}
         onClose={() => setSearchOpen(false)}
