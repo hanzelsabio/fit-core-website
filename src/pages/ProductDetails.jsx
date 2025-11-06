@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useProducts } from "../context/ProductContext";
 import { useCart } from "../context/CartContext";
 
@@ -7,9 +7,11 @@ function ProductDetails() {
   const { id } = useParams();
   const { products } = useProducts();
   const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   const product = products.find((p) => String(p.id) === String(id));
   const [quantity, setQuantity] = useState(1);
+  const [isFading, setIsFading] = useState(false);
 
   const increaseQuantity = () => setQuantity((prev) => prev + 1);
   const decreaseQuantity = () =>
@@ -17,7 +19,7 @@ function ProductDetails() {
 
   if (!product) return <p>Product not found.</p>;
 
-  // ✅ Get 4 random featured products excluding the current one
+  // Get 4 random featured products excluding the current one
   const featured = useMemo(() => {
     return products
       .filter((p) => String(p.id) !== String(id))
@@ -25,8 +27,22 @@ function ProductDetails() {
       .slice(0, 4);
   }, [products, id]);
 
+  // Fade handler for featured product click
+  const handleProductClick = (targetId) => {
+    setIsFading(true);
+    setTimeout(() => {
+      navigate(`/product/${targetId}`);
+      setIsFading(false);
+      window.scrollTo(0, 0);
+    }, 300); // matches fade-out duration
+  };
+
   return (
-    <>
+    <div
+      className={`transition-opacity duration-300 ${
+        isFading ? "opacity-0" : "opacity-100"
+      }`}
+    >
       {/* Product Details */}
       <section className="max-w-6xl mx-auto py-12 px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -90,10 +106,10 @@ function ProductDetails() {
         {featured.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {featured.map((item) => (
-              <Link
+              <button
                 key={item.id}
-                to={`/product/${item.id}`}
-                className="block p-4 text-center"
+                onClick={() => handleProductClick(item.id)}
+                className="block p-4 text-center transition-transform duration-200 hover:scale-105 focus:outline-none"
               >
                 <img
                   src={item.image}
@@ -104,7 +120,7 @@ function ProductDetails() {
                   {item.title}
                 </h3>
                 <p className="text-gray-900 font-semibold">${item.price}</p>
-              </Link>
+              </button>
             ))}
           </div>
         ) : (
@@ -113,7 +129,7 @@ function ProductDetails() {
           </p>
         )}
       </section>
-    </>
+    </div>
   );
 }
 

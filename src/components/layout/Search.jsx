@@ -100,7 +100,7 @@ export default function SearchBar({ isOpen, onClose, onSearch, results = [] }) {
 
       {/* Results Section */}
       <div
-        className={`bg-white overflow-y-auto max-h-[calc(100vh-80px)] transition-all duration-300 ${
+        className={`bg-white overflow-y-auto max-h-[calc(100vh-130px)] transition-all duration-300 ${
           animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
         }`}
       >

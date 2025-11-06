@@ -143,6 +143,15 @@ export default function Header() {
           </li>
           <li>
             <Link
+              to="/about"
+              onClick={() => setSidebarOpen(false)}
+              className="block hover:text-red-600 transition"
+            >
+              FAQs
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/contact"
               onClick={() => setSidebarOpen(false)}
               className="block hover:text-red-600 transition"

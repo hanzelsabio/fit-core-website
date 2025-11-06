@@ -1,6 +1,16 @@
-import BlackLogoTee from "../assets/images/black-logo-shirt.png";
-import WhiteLogoTee from "../assets/images/white-logo-shirt.png";
-import RedLogoTee from "../assets/images/red-logo-shirt.png";
+import BlackLogoTee from "../assets/images/Black-Logo-Shirt.png";
+import GrayLogoTee from "../assets/images/Gray-Logo-Shirt.png";
+import WhiteLogoTee from "../assets/images/White-Logo-Shirt.png";
+import CreamLogoTee from "../assets/images/Cream-Logo-Shirt.png";
+import BrownLogoTee from "../assets/images/Brown-Logo-Shirt.png";
+import RedLogoTee from "../assets/images/Red-Logo-Shirt.png";
+import OrangeLogoTee from "../assets/images/Orange-Logo-Shirt.png";
+import YellowLogoTee from "../assets/images/Yellow-Logo-Shirt.png";
+import GreenLogoTee from "../assets/images/Army-Green-Logo-Shirt.png";
+import BlueLogoTee from "../assets/images/Blue-Logo-Shirt.png";
+import VioletLogoTee from "../assets/images/Violet-Logo-Shirt.png";
+import PurpleLogoTee from "../assets/images/Purple-Logo-Shirt.png";
+
 import NoImageFound from "../assets/images/no-image-found.png";
 
 const newArrivalsData = [
@@ -15,16 +25,34 @@ const newArrivalsData = [
   },
   {
     id: 2,
-    title: "White Logo Oversized Tee",
+    title: "Gray Logo Oversized Tee",
     price: 9.99,
     description:
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
-    image: WhiteLogoTee,
+    image: GrayLogoTee,
   },
   {
     id: 3,
-    title: "Red Logo Oversized Tee",
+    title: "White Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+    category: "Oversized Tee",
+    image: WhiteLogoTee,
+  },
+  {
+    id: 4,
+    title: "Cream Logo Oversized Tee",
+    price: 9.99,
+    description:
+      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+    category: "Oversized Tee",
+    image: CreamLogoTee,
+  },
+  {
+    id: 5,
+    title: "Brown Logo Oversized Tee",
     price: 9.99,
     description:
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
@@ -32,85 +60,67 @@ const newArrivalsData = [
     image: RedLogoTee,
   },
   {
-    id: 4,
-    title: "White Logo Oversized Tee",
-    price: 9.99,
-    description:
-      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
-    category: "Oversized Tee",
-    image: WhiteLogoTee,
-  },
-  {
-    id: 5,
-    title: "Black Logo Oversized Tee",
-    price: 9.99,
-    description:
-      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
-    category: "Oversized Tee",
-    image: BlackLogoTee,
-  },
-  {
     id: 6,
-    title: "White Logo Oversized Tee",
+    title: "Red Logo Oversized Tee",
     price: 9.99,
     description:
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
-    image: WhiteLogoTee,
+    image: BrownLogoTee,
   },
   {
     id: 7,
-    title: "Black Logo Oversized Tee",
+    title: "Orange Logo Oversized Tee",
     price: 9.99,
     description:
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
     category: "Oversized Tee",
-    image: BlackLogoTee,
+    image: OrangeLogoTee,
   },
   {
     id: 8,
-    title: "White Logo Oversized Tee",
+    title: "Yellow Logo Oversized Tee",
     price: 9.99,
     description:
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
-    image: WhiteLogoTee,
+    image: YellowLogoTee,
   },
   {
     id: 9,
-    title: "Black Logo Oversized Tee",
+    title: "Green Logo Oversized Tee",
     price: 9.99,
     description:
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
     category: "Oversized Tee",
-    image: BlackLogoTee,
+    image: GreenLogoTee,
   },
   {
     id: 10,
-    title: "White Logo Oversized Tee",
+    title: "Blue Logo Oversized Tee",
     price: 9.99,
     description:
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
-    image: WhiteLogoTee,
+    image: BlueLogoTee,
   },
   {
     id: 11,
-    title: "Black Logo Oversized Tee",
+    title: "Violet Logo Oversized Tee",
     price: 9.99,
     description:
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
     category: "Oversized Tee",
-    image: BlackLogoTee,
+    image: VioletLogoTee,
   },
   {
     id: 12,
-    title: "White Logo Oversized Tee",
+    title: "Purple Logo Oversized Tee",
     price: 9.99,
     description:
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
-    image: WhiteLogoTee,
+    image: PurpleLogoTee,
   },
 ];
 
