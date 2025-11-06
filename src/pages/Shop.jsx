@@ -9,7 +9,17 @@ function Shop() {
 
   if (loading)
     return (
-      <p className="text-center text-gray-500 mt-10">Loading products...</p>
+      <section className="max-w-6xl mx-auto py-10 px-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-pulse">
+          {Array.from({ length: 8 }).map((_, index) => (
+            <div key={index} className="p-4 flex flex-col justify-between">
+              <div className="w-full h-50 bg-gray-100 mb-4"></div>
+              <div className="h-4 bg-gray-100 w-3/4 mx-auto mb-2"></div>
+              <div className="h-4 bg-gray-100 w-1/2 mx-auto"></div>
+            </div>
+          ))}
+        </div>
+      </section>
     );
   if (error) return <p className="text-center text-red-500 mt-10">{error}</p>;
 
