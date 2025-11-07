@@ -21,7 +21,7 @@ function App() {
           {/* <NewArrivals />
           <Hero /> */}
           {/* <Hero /> */}
-          <main className="min-h-screen bg-white">
+          <main className="bg-white">
             <AppRoutes />
           </main>
           {/* <Hero /> */}

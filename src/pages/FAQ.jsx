@@ -2,8 +2,10 @@ import React from "react";
 
 function FAQ() {
   return (
-    <section className="bg-gray-100 min-h-[100vh] text-center">
-      <h2>FAQs Page</h2>
+    <section className="bg-gray-100 text-center">
+      <div className="flex justify-center items-center min-h-[70vh]">
+        <h2 className="">FAQs Page</h2>
+      </div>
     </section>
   );
 }
