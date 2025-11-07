@@ -9,8 +9,8 @@ function FAQ() {
   };
 
   return (
-    <section className="bg-gray-100 text-center py-12">
-      <div className="brand-faq max-w-2xl mx-auto p-6">
+    <section className="bg-white text-center py-12">
+      <div className="brand-faq max-w-5xl mx-auto p-6">
         <h2 className="faq-title text-2xl font-bold uppercase mb-8">
           Frequently Asked Questions
         </h2>
@@ -19,7 +19,7 @@ function FAQ() {
           {faqsData.map((faq, index) => (
             <div
               key={index}
-              className="faq-item bg-gray-200 border border-gray-300"
+              className="faq-item bg-gray-100 border border-gray-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
@@ -33,7 +33,7 @@ function FAQ() {
               </button>
 
               {activeIndex === index && (
-                <div className="faq-answer text-start bg-gray-100 text-gray-600 px-8 py-5 text-base">
+                <div className="faq-answer text-start bg-white text-gray-600 border-t border-gray-300 px-8 py-5 text-base">
                   {faq.answer.map((line, i) => (
                     <p key={i}>{line}</p>
                   ))}
