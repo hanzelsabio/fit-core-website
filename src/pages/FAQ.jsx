@@ -24,6 +24,7 @@ function FAQ() {
               <button
                 onClick={() => toggleFAQ(index)}
                 className="faq-question flex justify-between items-center w-full text-left text-lg font-semibold focus:outline-none px-8 py-5"
+                style={{ cursor: "pointer" }}
               >
                 <span>{faq.question}</span>
                 <span className="icon text-2xl">
