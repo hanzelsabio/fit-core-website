@@ -2,9 +2,11 @@ import React from "react";
 
 function AboutPage() {
   return (
-    <section className="bg-gray-100 text-center">
-      <div className="flex justify-center items-center min-h-[70vh]">
-        <h2>About Page</h2>
+    <section className="bg-white text-center py-12">
+      <div className="brand-about max-w-5xl mx-auto p-6">
+        <h2 className="about-title text-2xl font-bold uppercase mb-8">
+          About us
+        </h2>
       </div>
     </section>
   );

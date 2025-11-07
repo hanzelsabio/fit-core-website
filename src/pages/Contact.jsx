@@ -2,9 +2,11 @@ import React from "react";
 
 function ContactPage() {
   return (
-    <section className="bg-gray-100 text-center">
-      <div className="flex justify-center items-center min-h-[70vh]">
-        <h2>Contact Page</h2>
+    <section className="bg-white text-center py-12">
+      <div className="brand-contact max-w-5xl mx-auto p-6">
+        <h2 className="contact-title text-2xl font-bold uppercase mb-8">
+          Contact us
+        </h2>
       </div>
     </section>
   );
