@@ -163,6 +163,40 @@ function ProductDetails() {
         )}
       </section>
 
+      {/* Recently Viewed Products Section */}
+      {/* THIS FEATURE WILL BE ADDED LATER */}
+      <section className="max-w-6xl mx-auto py-10 px-8 border-t border-gray-200 mt-10">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+          Recently Viewed
+        </h2>
+
+        {featured.length > 0 ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {featured.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleProductClick(item.id)}
+                className="block p-4 text-center transition-transform duration-200 hover:scale-105 focus:outline-none"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-40 object-contain mb-4"
+                />
+                <h3 className="text-sm font-medium text-gray-800 line-clamp-2 mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-gray-900 font-semibold">${item.price}</p>
+              </button>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-gray-500">
+            No featured products available.
+          </p>
+        )}
+      </section>
+
       {/* Tailwind animation */}
       <style>
         {`
