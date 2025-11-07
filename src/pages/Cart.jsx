@@ -15,9 +15,6 @@ function Cart() {
   return (
     <section className="max-w-4xl mx-auto py-10 px-4">
       <h2 className="text-xl font-bold mb-2 text-center">Your Shopping Bag</h2>
-      <p className="text-center text-sm text-gray-500">
-        Total Items <span>({cart.length})</span>
-      </p>
 
       {cart.length === 0 ? (
         <p className="text-center text-sm text-gray-500">
@@ -31,6 +28,9 @@ function Cart() {
         </p>
       ) : (
         <div>
+          <p className="text-center text-sm text-gray-500">
+            Total Items <span>({cart.length})</span>
+          </p>
           <ul className="divide-y divide-gray-200">
             {cart.map((item) => (
               <li
