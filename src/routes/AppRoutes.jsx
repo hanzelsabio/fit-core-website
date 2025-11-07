@@ -11,6 +11,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Profile from "../pages/Profile";
 import AboutPage from "../pages/About";
+import FAQ from "../pages/FAQ";
 import ContactPage from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 
@@ -34,6 +35,7 @@ export default function AppRoutes() {
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/faqs" element={<FAQ />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
