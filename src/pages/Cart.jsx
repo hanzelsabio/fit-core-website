@@ -20,7 +20,7 @@ function Cart() {
         <p className="text-center text-sm text-gray-500">
           It appears that your bag is currently empty.{" "}
           <Link
-            to="/shop"
+            to="/"
             className="flex justify-center text-red-600 hover:text-red-800 py-5"
           >
             Continue Shopping
