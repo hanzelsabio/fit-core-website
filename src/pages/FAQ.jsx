@@ -19,15 +19,15 @@ function FAQ() {
           {faqsData.map((faq, index) => (
             <div
               key={index}
-              className="faq-item bg-gray-100 border border-gray-300"
+              className="faq-item bg-gray-100 border border-gray-300 mx-2"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="faq-question flex justify-between items-center w-full text-left text-lg font-semibold focus:outline-none px-8 py-5"
+                className="faq-question flex justify-between items-center w-full text-left text-md font-semibold focus:outline-none px-8 py-3"
                 style={{ cursor: "pointer" }}
               >
                 <span>{faq.question}</span>
-                <span className="icon text-2xl">
+                <span className="icon text-md">
                   {activeIndex === index ? "−" : "+"}
                 </span>
               </button>
