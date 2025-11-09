@@ -50,21 +50,33 @@ function Cart() {
               >
                 <div className="flex items-center gap-4">
                   {item.image && (
-                    <img
-                      src={item.image}
-                      alt={item.title} // use 'title' instead of 'name'
-                      className="w-25 h-25 object-cover rounded-md"
-                    />
+                    <Link to={`/product/${item.id}`}>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-25 h-25 object-cover"
+                      />
+                    </Link>
                   )}
                   <div>
-                    <h3 className="font-semibold">{item.title}</h3>{" "}
-                    {/* fixed */}
+                    {/* Product Title */}
+                    <Link
+                      to={`/product/${item.id}`}
+                      className="font-semibold block"
+                    >
+                      {item.title}
+                    </Link>
+
+                    {/* Selected Size */}
                     {item.selectedSize && (
                       <p className="text-sm text-gray-500">
                         Size: {item.selectedSize}
                       </p>
                     )}
+
                     <p className="text-gray-600">${item.price}</p>
+
+                    {/* Quantity Controls */}
                     <div className="flex items-center mt-2">
                       <button
                         onClick={() =>
