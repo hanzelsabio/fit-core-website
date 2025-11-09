@@ -13,21 +13,27 @@ function Cart() {
   } = useCart();
 
   return (
-    <section className="max-w-4xl mx-auto py-10 px-4">
-      <h2 className="text-xl font-bold mb-2 text-center">Your Shopping Bag</h2>
-
+    <section className="max-w-4xl mx-auto px-4">
       {cart.length === 0 ? (
-        <p className="text-center text-sm text-gray-500">
-          It appears that your bag is currently empty.{" "}
-          <Link
-            to="/"
-            className="flex justify-center text-red-600 hover:text-red-800 py-5"
-          >
-            Continue Shopping
-          </Link>
-        </p>
+        <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
+          <h2 className="text-xl font-bold mb-2 text-center">
+            Your Shopping Bag
+          </h2>
+          <p className="text-center text-sm text-gray-500">
+            It appears that your bag is currently empty.{" "}
+            <Link
+              to="/"
+              className="flex justify-center text-red-600 hover:text-red-800 py-5"
+            >
+              Continue Shopping
+            </Link>
+          </p>
+        </div>
       ) : (
-        <div>
+        <div className="min-h-[80vh] py-10">
+          <h2 className="text-xl font-bold mb-2 text-center">
+            Your Shopping Bag
+          </h2>
           <p className="text-center text-sm text-gray-500">
             Total Items <span>({cart.length})</span>
           </p>
