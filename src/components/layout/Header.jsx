@@ -11,6 +11,7 @@ import {
   X,
   Instagram,
   Facebook,
+  Twitter,
 } from "lucide-react";
 import SearchBar from "./Search";
 
@@ -190,6 +191,14 @@ export default function Header() {
             className="hover:text-red-600 transition"
           >
             <Facebook className="w-5 h-5" />
+          </a>
+          <a
+            href="https://x.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-red-600 transition"
+          >
+            <Twitter className="w-5 h-5" />
           </a>
         </div>
       </aside>

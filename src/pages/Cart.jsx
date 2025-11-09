@@ -31,40 +31,50 @@ function Cart() {
         </div>
       ) : (
         <div className="min-h-[80vh] py-10">
-          <h2 className="text-xl font-bold mb-2 text-center">
-            Your Shopping Bag
-          </h2>
-          <p className="text-center text-sm text-gray-500">
-            Total Items <span>({cart.length})</span>
-          </p>
+          <div className="mb-10">
+            <h2 className="text-xl font-bold pb-2 text-center">
+              Your Shopping Bag
+            </h2>
+            <p className="text-center text-sm text-gray-500">
+              Total Items <span>({cart.length})</span>
+            </p>
+          </div>
           <ul className="divide-y divide-gray-200">
             {cart.map((item) => (
               <li
-                key={item.id}
+                key={`${item.id}-${item.selectedSize || "default"}`}
                 className="flex justify-between items-center py-4"
               >
                 <div className="flex items-center gap-4">
                   {item.image && (
                     <img
                       src={item.image}
-                      alt={item.name}
-                      className="w-16 h-16 object-cover rounded-md"
+                      alt={item.title} // use 'title' instead of 'name'
+                      className="w-25 h-25 object-cover rounded-md"
                     />
                   )}
                   <div>
-                    <h3 className="font-semibold">{item.name}</h3>
+                    <h3 className="font-semibold">{item.title}</h3>{" "}
+                    {/* fixed */}
+                    {item.selectedSize && (
+                      <p className="text-sm text-gray-500">
+                        Size: {item.selectedSize}
+                      </p>
+                    )}
                     <p className="text-gray-600">${item.price}</p>
                     <div className="flex items-center mt-2">
                       <button
-                        onClick={() => decreaseQuantity(item.id)}
-                        className="px-2 py-1 border rounded-md hover:bg-gray-200"
+                        onClick={() =>
+                          decreaseQuantity(item.id, item.selectedSize)
+                        }
+                        className="px-2 border hover:bg-gray-200"
                       >
                         -
                       </button>
-                      <span className="mx-3">{item.quantity}</span>
+                      <span className="mx-2 text-sm">{item.quantity}</span>
                       <button
                         onClick={() => addToCart(item)}
-                        className="px-2 py-1 border rounded-md hover:bg-gray-200"
+                        className="px-2 border hover:bg-gray-200"
                       >
                         +
                       </button>
@@ -72,7 +82,7 @@ function Cart() {
                   </div>
                 </div>
                 <button
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={() => removeFromCart(item.id, item.selectedSize)}
                   className="text-red-600 hover:underline"
                 >
                   Remove
@@ -82,19 +92,19 @@ function Cart() {
           </ul>
 
           <div className="text-right mt-6">
-            <p className="text-xl font-semibold">
-              Total: ${totalPrice.toFixed(2)}
+            <p className="text-md font-semibold uppercase">
+              total: ${totalPrice.toFixed(2)}
             </p>
             <div className="mt-4 flex justify-end gap-3">
               <button
                 onClick={clearCart}
-                className="bg-gray-200 px-4 py-2 rounded-md hover:bg-gray-300"
+                className="bg-gray-200 px-6 py-2 hover:bg-gray-300"
               >
                 Clear Cart
               </button>
               <Link
                 to="/checkout"
-                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                className="bg-black text-white px-6 py-2 hover:bg-gray-800"
               >
                 Checkout
               </Link>

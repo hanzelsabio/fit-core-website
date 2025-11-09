@@ -8,47 +8,53 @@ export const CartProvider = ({ children }) => {
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
-  // Sync cart with localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   // Add item to cart
-  const addToCart = (product) => {
+  const addToCart = (product, quantity = 1) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.id === product.id);
+      // Unique key by id + size
+      const existingItem = prevCart.find(
+        (item) =>
+          item.id === product.id && item.selectedSize === product.selectedSize
+      );
+
       if (existingItem) {
         return prevCart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+          item.id === product.id && item.selectedSize === product.selectedSize
+            ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       } else {
-        return [...prevCart, { ...product, quantity: 1 }];
+        return [...prevCart, { ...product, quantity }];
       }
     });
   };
 
-  // Remove item completely
-  const removeFromCart = (id) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+  const removeFromCart = (id, selectedSize) => {
+    setCart((prevCart) =>
+      prevCart.filter(
+        (item) => !(item.id === id && item.selectedSize === selectedSize)
+      )
+    );
   };
 
-  // Decrease quantity
-  const decreaseQuantity = (id) => {
+  const decreaseQuantity = (id, selectedSize) => {
     setCart((prevCart) =>
       prevCart
         .map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+          item.id === id && item.selectedSize === selectedSize
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
         )
         .filter((item) => item.quantity > 0)
     );
   };
 
-  // Clear cart
   const clearCart = () => setCart([]);
 
-  // Calculate total price
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -70,5 +76,4 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// Custom hook for easy access
 export const useCart = () => useContext(CartContext);

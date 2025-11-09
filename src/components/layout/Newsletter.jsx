@@ -55,14 +55,6 @@ export default function Newsletter() {
         {/* Social Section */}
         <div className="flex items-center justify-center mt-8 gap-4">
           <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-700 hover:text-gray-900 transition-transform transform hover:scale-110"
-          >
-            <Facebook size={20} />
-          </a>
-          <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -71,7 +63,15 @@ export default function Newsletter() {
             <Instagram size={20} />
           </a>
           <a
-            href="https://youtube.com"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-700 hover:text-gray-900 transition-transform transform hover:scale-110"
+          >
+            <Facebook size={20} />
+          </a>
+          <a
+            href="https://x.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-700 hover:text-gray-900 transition-transform transform hover:scale-110"

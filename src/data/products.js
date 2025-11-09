@@ -22,6 +22,7 @@ const products = [
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
     category: "Oversized Tee",
     image: BlackLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 2,
@@ -31,6 +32,7 @@ const products = [
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
     image: GrayLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ const products = [
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
     category: "Oversized Tee",
     image: WhiteLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 4,
@@ -49,6 +52,7 @@ const products = [
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
     image: CreamLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 5,
@@ -58,6 +62,7 @@ const products = [
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
     category: "Oversized Tee",
     image: BrownLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 6,
@@ -67,6 +72,7 @@ const products = [
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
     image: RedLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 7,
@@ -76,6 +82,7 @@ const products = [
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
     category: "Oversized Tee",
     image: OrangeLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 8,
@@ -85,6 +92,7 @@ const products = [
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
     image: YellowLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 9,
@@ -94,6 +102,7 @@ const products = [
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
     category: "Oversized Tee",
     image: GreenLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 10,
@@ -103,6 +112,7 @@ const products = [
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
     image: BlueLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 11,
@@ -112,6 +122,7 @@ const products = [
       "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
     category: "Oversized Tee",
     image: VioletLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 12,
@@ -121,6 +132,7 @@ const products = [
       "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
     category: "Oversized Tee",
     image: PurpleLogoTee,
+    sizes: ["S", "M", "L", "XL"],
   },
 ];
 

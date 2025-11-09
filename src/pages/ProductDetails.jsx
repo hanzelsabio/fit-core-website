@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useProducts } from "../context/ProductContext";
 import { useCart } from "../context/CartContext";
-
 import { CheckCheck } from "lucide-react";
 
 function ProductDetails() {
@@ -15,11 +14,38 @@ function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
   const [isFading, setIsFading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [recentlyViewed, setRecentlyViewed] = useState([]);
+  const [selectedSize, setSelectedSize] = useState("");
 
   useEffect(() => {
     setShowPopup(false);
     setQuantity(1);
-  }, [id]);
+
+    // Auto-select first size when product changes
+    if (product?.sizes?.length > 0) {
+      setSelectedSize(product.sizes[0]);
+    } else {
+      setSelectedSize("");
+    }
+  }, [id, product]);
+
+  // --- Recently Viewed Logic ---
+  useEffect(() => {
+    if (!product) return;
+    const stored = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+    const updated = stored.filter((p) => String(p.id) !== String(product.id));
+
+    updated.unshift({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
+    });
+
+    const limited = updated.slice(0, 5);
+    localStorage.setItem("recentlyViewed", JSON.stringify(limited));
+    setRecentlyViewed(limited);
+  }, [product]);
 
   const increaseQuantity = () => setQuantity((prev) => prev + 1);
   const decreaseQuantity = () =>
@@ -27,7 +53,6 @@ function ProductDetails() {
 
   if (!product) return <p>Product not found.</p>;
 
-  // Get 4 random featured products excluding the current one
   const featured = useMemo(() => {
     return products
       .filter((p) => String(p.id) !== String(id))
@@ -35,28 +60,29 @@ function ProductDetails() {
       .slice(0, 4);
   }, [products, id]);
 
-  // Fade handler for featured product click
   const handleProductClick = (targetId) => {
     setIsFading(true);
     setTimeout(() => {
       navigate(`/product/${targetId}`);
       setIsFading(false);
       window.scrollTo(0, 0);
-    }, 300); // matches fade-out duration
+    }, 300);
   };
 
-  // Add to Cart handler with popup
   const handleAddToCart = () => {
-    addToCart(product, quantity);
+    if (product.sizes?.length && !selectedSize) {
+      alert("Please select a size before adding to cart.");
+      return;
+    }
 
-    // retrigger animation if popup is already showing
+    addToCart({ ...product, selectedSize }, quantity);
+
     setShowPopup(false);
     setTimeout(() => setShowPopup(true), 10);
-
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 10000); // popup disappears after 10s
+    setTimeout(() => setShowPopup(false), 10000);
   };
+
+  const sizes = product.sizes || [];
 
   return (
     <div
@@ -71,7 +97,8 @@ function ProductDetails() {
             <CheckCheck size={18} />
           </span>
           <span>
-            <strong>{quantity}×</strong> {product.title} – Added to cart!
+            <strong>{quantity}×</strong> {product.title}
+            {selectedSize && ` (${selectedSize})`} – Added to cart!
           </span>
         </div>
       )}
@@ -79,7 +106,7 @@ function ProductDetails() {
       {/* Product Details */}
       <section className="max-w-6xl mx-auto py-12 px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* LEFT: Image */}
+          {/* LEFT */}
           <div className="flex flex-col items-center">
             <img
               src={product.image}
@@ -88,17 +115,53 @@ function ProductDetails() {
             />
           </div>
 
-          {/* RIGHT: Info */}
+          {/* RIGHT */}
           <div className="space-y-4 text-center md:text-left">
             <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">
               {product.title}
             </h1>
             <p className="text-xl font-bold text-gray-900">${product.price}</p>
+
+            {/* --- Sizes Section --- */}
+            <div className="mt-4 flex flex-col items-center md:items-start">
+              {sizes.length > 0 ? (
+                <>
+                  {/* Selected Size Label */}
+                  {selectedSize && (
+                    <p className="text-gray-700 font-medium mb-2">
+                      Size: <span className="font-medium">{selectedSize}</span>
+                    </p>
+                  )}
+
+                  <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                    {sizes.map((size) => (
+                      <button
+                        key={size}
+                        onClick={() => setSelectedSize(size)}
+                        className={`px-4 py-2 border text-sm font-medium transition ${
+                          selectedSize === size
+                            ? "bg-black text-white border-black"
+                            : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100"
+                        }`}
+                      >
+                        {size}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p className="text-sm text-gray-500">
+                  No sizes available for this item.
+                </p>
+              )}
+            </div>
+
+            {/* Description */}
             <p className="text-gray-600 leading-relaxed">
               {product.description}
             </p>
 
-            {/* Quantity + Add to Cart */}
+            {/* Quantity & Cart */}
             <div className="flex items-center justify-center md:justify-start gap-3 mt-4">
               <div className="flex items-center border">
                 <button
@@ -120,8 +183,7 @@ function ProductDetails() {
 
               <button
                 onClick={handleAddToCart}
-                className="w-100 bg-black text-white px-6 py-2"
-                style={{ cursor: "pointer" }}
+                className="bg-black text-white px-6 py-2"
               >
                 Add to Cart
               </button>
@@ -130,12 +192,11 @@ function ProductDetails() {
         </div>
       </section>
 
-      {/* Featured Products Section */}
+      {/* Featured Products */}
       <section className="max-w-6xl mx-auto py-10 px-8 border-t border-gray-200 mt-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
           Featured Products
         </h2>
-
         {featured.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {featured.map((item) => (
@@ -163,16 +224,15 @@ function ProductDetails() {
         )}
       </section>
 
-      {/* Recently Viewed Products Section */}
-      {/* THIS FEATURE WILL BE ADDED LATER */}
+      {/* Recently Viewed */}
       <section className="max-w-6xl mx-auto py-10 px-8 border-t border-gray-200 mt-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
           Recently Viewed
         </h2>
-
-        {featured.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {featured.map((item) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {recentlyViewed
+            .filter((item) => String(item.id) !== String(id))
+            .map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleProductClick(item.id)}
@@ -189,15 +249,10 @@ function ProductDetails() {
                 <p className="text-gray-900 font-semibold">${item.price}</p>
               </button>
             ))}
-          </div>
-        ) : (
-          <p className="text-center text-gray-500">
-            No featured products available.
-          </p>
-        )}
+        </div>
       </section>
 
-      {/* Tailwind animation */}
+      {/* Animation */}
       <style>
         {`
           @keyframes fadeInOut {
