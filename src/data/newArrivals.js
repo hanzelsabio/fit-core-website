@@ -19,7 +19,7 @@ const newArrivalsData = [
     title: "Black Logo Oversized Tee",
     price: 9.99,
     description:
-      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+      "Elevate your streetwear style with this classic black oversized tee, featuring a bold logo design and a relaxed fit for all-day comfort.",
     category: "Oversized Tee",
     image: BlackLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -29,7 +29,7 @@ const newArrivalsData = [
     title: "Gray Logo Oversized Tee",
     price: 9.99,
     description:
-      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+      "A versatile gray oversized tee that pairs effortlessly with jeans or joggers, offering a modern look with a statement logo print.",
     category: "Oversized Tee",
     image: GrayLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -39,7 +39,7 @@ const newArrivalsData = [
     title: "White Logo Oversized Tee",
     price: 9.99,
     description:
-      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+      "Stay fresh and comfortable in this white oversized tee, featuring a minimalist logo and breathable fabric for everyday wear.",
     category: "Oversized Tee",
     image: WhiteLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -49,7 +49,7 @@ const newArrivalsData = [
     title: "Cream Logo Oversized Tee",
     price: 9.99,
     description:
-      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+      "Soft and stylish, this cream oversized tee offers a relaxed silhouette and logo detailing, perfect for layering or casual outings.",
     category: "Oversized Tee",
     image: CreamLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -59,7 +59,7 @@ const newArrivalsData = [
     title: "Brown Logo Oversized Tee",
     price: 9.99,
     description:
-      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+      "Bring warmth to your wardrobe with this brown oversized tee, featuring a bold logo print and a soft cotton blend for ultimate comfort.",
     category: "Oversized Tee",
     image: BrownLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -69,7 +69,7 @@ const newArrivalsData = [
     title: "Red Logo Oversized Tee",
     price: 9.99,
     description:
-      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+      "Make a statement with this vibrant red oversized tee, featuring a striking logo design and a relaxed fit perfect for streetwear looks.",
     category: "Oversized Tee",
     image: RedLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -79,7 +79,7 @@ const newArrivalsData = [
     title: "Orange Logo Oversized Tee",
     price: 9.99,
     description:
-      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+      "Brighten up your outfit with this orange oversized tee, complete with a bold logo and comfortable relaxed fit for daily wear.",
     category: "Oversized Tee",
     image: OrangeLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -89,7 +89,7 @@ const newArrivalsData = [
     title: "Yellow Logo Oversized Tee",
     price: 9.99,
     description:
-      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+      "Sunny and stylish, this yellow oversized tee features a standout logo and a soft, breathable fabric perfect for casual days.",
     category: "Oversized Tee",
     image: YellowLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -99,7 +99,7 @@ const newArrivalsData = [
     title: "Green Logo Oversized Tee",
     price: 9.99,
     description:
-      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+      "Stay effortlessly cool in this green oversized tee with a bold logo print, designed for comfort and easy street-style pairing.",
     category: "Oversized Tee",
     image: GreenLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -109,7 +109,7 @@ const newArrivalsData = [
     title: "Blue Logo Oversized Tee",
     price: 9.99,
     description:
-      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+      "A classic blue oversized tee featuring a sleek logo print, offering a relaxed fit and soft cotton fabric for everyday comfort.",
     category: "Oversized Tee",
     image: BlueLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -119,7 +119,7 @@ const newArrivalsData = [
     title: "Violet Logo Oversized Tee",
     price: 9.99,
     description:
-      "Durable chrome-plated dumbbell set with adjustable weights. Ideal for home strength training and muscle toning.",
+      "Add a pop of color with this violet oversized tee, featuring a modern logo design and a comfortable, loose-fitting silhouette.",
     category: "Oversized Tee",
     image: VioletLogoTee,
     sizes: ["S", "M", "L", "XL"],
@@ -129,7 +129,7 @@ const newArrivalsData = [
     title: "Purple Logo Oversized Tee",
     price: 9.99,
     description:
-      "Extra thick, non-slip yoga mat for comfort and support during yoga, pilates, or stretching workouts.",
+      "Stand out with this purple oversized tee, crafted from soft cotton and featuring a bold logo for a relaxed, street-ready look.",
     category: "Oversized Tee",
     image: PurpleLogoTee,
     sizes: ["S", "M", "L", "XL"],
