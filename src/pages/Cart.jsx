@@ -12,6 +12,9 @@ function Cart() {
     addToCart,
   } = useCart();
 
+  // Calculate total quantity
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <section className="max-w-4xl mx-auto px-4">
       {cart.length === 0 ? (
@@ -36,7 +39,7 @@ function Cart() {
               Your Shopping Bag
             </h2>
             <p className="text-center text-sm text-gray-500">
-              Total Items <span>({cart.length})</span>
+              Total Items <span>({totalQuantity})</span>
             </p>
           </div>
           <ul className="divide-y divide-gray-200">
