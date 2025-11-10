@@ -83,6 +83,7 @@ export default function SearchBar({ isOpen, onClose, onSearch, results = [] }) {
             <button
               onClick={handleClear}
               className="ml-2 text-gray-500 hover:text-gray-800 transition text-sm uppercase px-5"
+              style={{ cursor: "pointer" }}
             >
               Clear
             </button>
@@ -92,6 +93,7 @@ export default function SearchBar({ isOpen, onClose, onSearch, results = [] }) {
           <button
             onClick={onClose}
             className="ml-4 text-gray-500 hover:text-red-600 transition"
+            style={{ cursor: "pointer" }}
           >
             <X className="w-6 h-6" />
           </button>

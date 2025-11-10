@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
+import { Trash2 } from "lucide-react";
+
 function Cart() {
   const {
     cart,
@@ -33,7 +35,7 @@ function Cart() {
           </p>
         </div>
       ) : (
-        <div className="min-h-[80vh] py-10">
+        <div className="min-h-[80vh] pt-10 pb-20">
           <div className="mb-10">
             <h2 className="text-xl font-bold pb-2 text-center">
               Your Shopping Bag
@@ -99,8 +101,9 @@ function Cart() {
                 <button
                   onClick={() => removeFromCart(item.id, item.selectedSize)}
                   className="text-red-600 hover:underline"
+                  style={{ cursor: "pointer" }}
                 >
-                  Remove
+                  <Trash2 size={20} strokeWidth={1.75} />
                 </button>
               </li>
             ))}
@@ -114,6 +117,7 @@ function Cart() {
               <button
                 onClick={clearCart}
                 className="bg-gray-200 px-6 py-2 hover:bg-gray-300"
+                style={{ cursor: "pointer" }}
               >
                 Clear Cart
               </button>

@@ -49,6 +49,7 @@ export default function Header() {
           <button
             onClick={() => setSidebarOpen(true)}
             className="flex items-center text-gray-700 hover:text-red-600 transition"
+            style={{ cursor: "pointer" }}
           >
             <Menu className="w-6 h-6" />
           </button>
@@ -56,6 +57,7 @@ export default function Header() {
           <button
             onClick={() => setSearchOpen(true)}
             className="flex items-center text-gray-700 hover:text-red-600 transition"
+            style={{ cursor: "pointer" }}
           >
             <Search className="w-6 h-6" />
           </button>

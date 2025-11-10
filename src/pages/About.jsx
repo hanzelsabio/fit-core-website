@@ -8,6 +8,9 @@ function AboutPage() {
           About us
         </h2>
       </div>
+      <div className="bg-black min-h-[60vh]"></div>
+      <div className="bg-white min-h-[60vh]"></div>
+      <div className="bg-black min-h-[60vh]"></div>
     </section>
   );
 }

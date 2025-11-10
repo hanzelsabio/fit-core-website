@@ -143,6 +143,7 @@ function ProductDetails() {
                             ? "bg-black text-white border-black"
                             : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100"
                         }`}
+                        style={{ cursor: "pointer" }}
                       >
                         {size}
                       </button>
@@ -184,6 +185,7 @@ function ProductDetails() {
               <button
                 onClick={handleAddToCart}
                 className="bg-black text-white px-6 py-2"
+                style={{ cursor: "pointer" }}
               >
                 Add to Cart
               </button>
@@ -204,6 +206,7 @@ function ProductDetails() {
                 key={item.id}
                 onClick={() => handleProductClick(item.id)}
                 className="block p-4 text-center transition-transform duration-200 hover:scale-105 focus:outline-none"
+                style={{ cursor: "pointer" }}
               >
                 <img
                   src={item.image}
@@ -237,6 +240,7 @@ function ProductDetails() {
                 key={item.id}
                 onClick={() => handleProductClick(item.id)}
                 className="block p-4 text-center transition-transform duration-200 hover:scale-105 focus:outline-none"
+                style={{ cursor: "pointer" }}
               >
                 <img
                   src={item.image}

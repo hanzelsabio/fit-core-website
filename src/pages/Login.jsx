@@ -15,7 +15,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[70vh]">
+    <div className="flex justify-center items-center min-h-[80vh]">
       <form onSubmit={handleSubmit} className="w-full max-w-md p-6">
         <h1 className="text-2xl mb-10 text-center">LOGIN</h1>
         <input
@@ -35,9 +35,12 @@ export default function Login() {
           required
         />
         <p className="text-sm text-center underline underline-offset-3 mb-5">
-          <Link to="/register">Forgot your password? </Link>
+          <Link to="/forgotpassword">Forgot your password? </Link>
         </p>
-        <button className="w-full bg-black text-white py-2 hover:bg-gray-900">
+        <button
+          className="w-full bg-black text-white py-2 hover:bg-gray-900"
+          style={{ cursor: "pointer" }}
+        >
           Login
         </button>
         <p className="text-sm text-center mt-5">
