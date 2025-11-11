@@ -108,6 +108,7 @@ function ContactPage() {
             <button
               type="submit"
               className="bg-black text-white px-6 py-2 hover:bg-gray-800 transition duration-300"
+              style={{ cursor: "pointer" }}
             >
               Send Message
             </button>
