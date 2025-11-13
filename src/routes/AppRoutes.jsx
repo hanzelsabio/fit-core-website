@@ -11,6 +11,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ForgotPassword from "../pages/ForgotPassword";
 import Account from "../pages/Account";
+import Order from "../pages/Order";
 import AboutPage from "../pages/About";
 import FAQ from "../pages/FAQ";
 import ContactPage from "../pages/Contact";
@@ -29,6 +30,7 @@ export default function AppRoutes() {
       <Route path="/register" element={<Register />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
       <Route path="/account" element={<Account />} />
+      <Route path="/order" element={<Order />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/faqs" element={<FAQ />} />
       <Route path="/contact" element={<ContactPage />} />
