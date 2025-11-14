@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Order() {
+function AccountPage() {
   const orders = [
     {
       id: "#ORDER12345",
@@ -109,4 +109,4 @@ function Order() {
   );
 }
 
-export default Order;
+export default AccountPage;

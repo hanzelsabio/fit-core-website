@@ -10,7 +10,7 @@ import Checkout from "../pages/Checkout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ForgotPassword from "../pages/ForgotPassword";
-import Account from "../pages/Account";
+import AccountPage from "../pages/Account";
 import Order from "../pages/Order";
 import AboutPage from "../pages/About";
 import FAQ from "../pages/FAQ";
@@ -29,7 +29,7 @@ export default function AppRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
-      <Route path="/account" element={<Account />} />
+      <Route path="/account" element={<AccountPage />} />
       <Route path="/order" element={<Order />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/faqs" element={<FAQ />} />
