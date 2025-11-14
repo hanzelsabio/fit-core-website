@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function AccountPage() {
+export default function AccountPage() {
   const orders = [
     {
       id: "#ORDER12345",
@@ -108,5 +108,3 @@ function AccountPage() {
     </section>
   );
 }
-
-export default AccountPage;
