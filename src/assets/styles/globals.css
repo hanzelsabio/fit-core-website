@@ -2,6 +2,10 @@
 
 /* Custom global styles */
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Announcement Section */
 
 .announcement {

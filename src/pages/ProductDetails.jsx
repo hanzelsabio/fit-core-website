@@ -120,7 +120,9 @@ function ProductDetails() {
             <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">
               {product.title}
             </h1>
-            <p className="text-xl font-bold text-gray-900">${product.price}</p>
+            <p className="text-lg font-medium text-gray-900">
+              PHP {product.price}
+            </p>
 
             {/* --- Sizes Section --- */}
             <div className="mt-4 flex flex-col items-center md:items-start">
@@ -138,7 +140,7 @@ function ProductDetails() {
                       <button
                         key={size}
                         onClick={() => setSelectedSize(size)}
-                        className={`px-4 py-2 border text-sm font-medium transition ${
+                        className={`px-4.5 py-3 border text-xs font-medium transition ${
                           selectedSize === size
                             ? "bg-black text-white border-black"
                             : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100"
@@ -167,16 +169,18 @@ function ProductDetails() {
               <div className="flex items-center border">
                 <button
                   onClick={decreaseQuantity}
-                  className="ps-4 pe-2 py-2 hover:bg-gray-200"
+                  className="ps-4 pe-2 py-2"
+                  style={{ cursor: "pointer" }}
                 >
                   −
                 </button>
-                <span className="w-5 text-center text-sm font-semibold select-none">
+                <span className="w-5 text-center text-xs font-semibold select-none">
                   {quantity}
                 </span>
                 <button
                   onClick={increaseQuantity}
-                  className="ps-2 pe-4 py-2 hover:bg-gray-200"
+                  className="ps-2 pe-4 py-2"
+                  style={{ cursor: "pointer" }}
                 >
                   +
                 </button>
@@ -184,7 +188,7 @@ function ProductDetails() {
 
               <button
                 onClick={handleAddToCart}
-                className="bg-black text-white px-6 py-2"
+                className="bg-black text-xs text-white uppercase px-6 py-3.5"
                 style={{ cursor: "pointer" }}
               >
                 Add to Cart
@@ -216,7 +220,7 @@ function ProductDetails() {
                 <h3 className="text-sm font-medium text-gray-800 line-clamp-2 mb-1">
                   {item.title}
                 </h3>
-                <p className="text-gray-900 font-semibold">${item.price}</p>
+                <p className="text-gray-900 font-semibold">PHP {item.price}</p>
               </button>
             ))}
           </div>
@@ -250,7 +254,7 @@ function ProductDetails() {
                 <h3 className="text-sm font-medium text-gray-800 line-clamp-2 mb-1">
                   {item.title}
                 </h3>
-                <p className="text-gray-900 font-semibold">${item.price}</p>
+                <p className="text-gray-900 font-semibold">PHP {item.price}</p>
               </button>
             ))}
         </div>

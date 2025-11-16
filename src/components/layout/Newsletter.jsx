@@ -33,18 +33,18 @@ export default function Newsletter() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3"
+            className="flex flex-col sm:flex-row text-sm items-center justify-center gap-3"
           >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail"
-              className="w-full sm:w-80 px-4 py-2 border border-gray-300 focus:outline-none focus:outline-none"
+              className="w-full sm:w-80 px-4 py-3.5 border border-gray-300 focus:outline-none focus:outline-none"
             />
             <button
               type="submit"
-              className="w-full sm:w-auto bg-gray-900 text-white px-6 py-2 hover:bg-gray-800 transition-all"
+              className="w-full sm:w-auto bg-gray-900 text-white px-8 py-3.5 hover:bg-gray-800 transition-all"
               style={{ cursor: "pointer" }}
             >
               Subscribe

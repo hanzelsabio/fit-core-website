@@ -17,7 +17,7 @@ const newArrivalsData = [
   {
     id: 1,
     title: "Black Logo Oversized Tee",
-    price: 9.99,
+    price: 790.99,
     description:
       "Elevate your streetwear style with this classic black oversized tee, featuring a bold logo design and a relaxed fit for all-day comfort.",
     category: "Oversized Tee",

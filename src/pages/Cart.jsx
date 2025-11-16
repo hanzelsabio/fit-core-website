@@ -48,7 +48,7 @@ function Cart() {
             {cart.map((item) => (
               <li
                 key={`${item.id}-${item.selectedSize || "default"}`}
-                className="flex justify-between items-center py-4"
+                className="flex justify-between items-center p-4"
               >
                 <div className="flex items-center gap-4">
                   {item.image && (
@@ -71,30 +71,38 @@ function Cart() {
 
                     {/* Selected Size */}
                     {item.selectedSize && (
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-gray-500 py-2">
                         Size: {item.selectedSize}
                       </p>
                     )}
 
-                    <p className="text-gray-600">${item.price}</p>
+                    <p className="text-sm font-medium text-gray-600">
+                      PHP {item.price}
+                    </p>
 
                     {/* Quantity Controls */}
-                    <div className="flex items-center mt-2">
-                      <button
-                        onClick={() =>
-                          decreaseQuantity(item.id, item.selectedSize)
-                        }
-                        className="px-2 border hover:bg-gray-200"
-                      >
-                        -
-                      </button>
-                      <span className="mx-2 text-sm">{item.quantity}</span>
-                      <button
-                        onClick={() => addToCart(item)}
-                        className="px-2 border hover:bg-gray-200"
-                      >
-                        +
-                      </button>
+                    <div className="flex items-center justify-start gap-3 mt-2">
+                      <div className="flex items-center border">
+                        <button
+                          onClick={() =>
+                            decreaseQuantity(item.id, item.selectedSize)
+                          }
+                          className="ps-2 pe-2 py-1"
+                          style={{ cursor: "pointer" }}
+                        >
+                          -
+                        </button>
+                        <span className="w-5 text-center text-xs font-semibold select-none">
+                          {item.quantity}
+                        </span>
+                        <button
+                          onClick={() => addToCart(item)}
+                          className="ps-2 pe-2 py-1"
+                          style={{ cursor: "pointer" }}
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -109,9 +117,9 @@ function Cart() {
             ))}
           </ul>
 
-          <div className="text-right mt-6">
+          <div className="text-right mt-10 px-4">
             <p className="text-md font-semibold uppercase">
-              total: ${totalPrice.toFixed(2)}
+              total: PHP {totalPrice.toFixed(2)}
             </p>
             <div className="mt-4 flex justify-end gap-3">
               <button

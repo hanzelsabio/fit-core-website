@@ -44,7 +44,7 @@ function NewArrivals() {
               {product.title}
             </h3>
             <p className="text-gray-900 font-semibold text-center text-sm mb-4">
-              ${product.price}
+              PHP {product.price}
             </p>
           </Link>
         ))}
