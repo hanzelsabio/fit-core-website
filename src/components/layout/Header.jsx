@@ -123,6 +123,7 @@ export default function Header() {
           <button
             onClick={() => setSidebarOpen(false)}
             className="text-gray-600 hover:text-red-600 transition"
+            style={{ cursor: "pointer" }}
           >
             <X className="w-6 h-6" />
           </button>

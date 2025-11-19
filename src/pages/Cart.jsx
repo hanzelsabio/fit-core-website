@@ -12,6 +12,7 @@ function Cart() {
     totalPrice,
     decreaseQuantity,
     addToCart,
+    updateSize,
   } = useCart();
 
   // Calculate total quantity
@@ -60,6 +61,7 @@ function Cart() {
                       />
                     </Link>
                   )}
+
                   <div>
                     {/* Product Title */}
                     <Link
@@ -69,14 +71,28 @@ function Cart() {
                       {item.title}
                     </Link>
 
-                    {/* Selected Size */}
-                    {item.selectedSize && (
-                      <p className="text-sm text-gray-500 py-2">
-                        Size: {item.selectedSize}
-                      </p>
-                    )}
+                    {/* Size Selector */}
+                    <label for="option-size" className="text-xs">
+                      Size:
+                    </label>
+                    <select
+                      id="option-size"
+                      value={item.selectedSize || ""}
+                      onChange={(e) =>
+                        updateSize(item.id, item.selectedSize, e.target.value)
+                      }
+                      className="text-xs py-1 m-2"
+                    >
+                      <option value="">Select size</option>
+                      {item.sizes?.map((size) => (
+                        <option key={size} value={size}>
+                          {size}
+                        </option>
+                      ))}
+                    </select>
 
-                    <p className="text-sm font-medium text-gray-600">
+                    {/* Price */}
+                    <p className="text-sm font-medium mb-3 text-gray-600">
                       PHP {item.price}
                     </p>
 
@@ -87,7 +103,7 @@ function Cart() {
                           onClick={() =>
                             decreaseQuantity(item.id, item.selectedSize)
                           }
-                          className="ps-2 pe-2 py-1"
+                          className="ps-3 pe-2"
                           style={{ cursor: "pointer" }}
                         >
                           -
@@ -97,7 +113,7 @@ function Cart() {
                         </span>
                         <button
                           onClick={() => addToCart(item)}
-                          className="ps-2 pe-2 py-1"
+                          className="ps-2 pe-3"
                           style={{ cursor: "pointer" }}
                         >
                           +
@@ -124,14 +140,14 @@ function Cart() {
             <div className="mt-4 flex justify-end gap-3">
               <button
                 onClick={clearCart}
-                className="bg-gray-200 px-6 py-2 hover:bg-gray-300"
+                className="text-sm bg-gray-200 px-8 py-3.5 hover:bg-gray-300"
                 style={{ cursor: "pointer" }}
               >
                 Clear Cart
               </button>
               <Link
                 to="/checkout"
-                className="bg-black text-white px-6 py-2 hover:bg-gray-800"
+                className="bg-black text-sm text-white px-8 py-3.5 hover:bg-gray-800"
               >
                 Checkout
               </Link>

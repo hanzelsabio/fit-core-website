@@ -15,21 +15,30 @@ export const CartProvider = ({ children }) => {
   // Add item to cart
   const addToCart = (product, quantity = 1) => {
     setCart((prevCart) => {
-      // Unique key by id + size
       const existingItem = prevCart.find(
         (item) =>
-          item.id === product.id && item.selectedSize === product.selectedSize
+          item.productId === product.id &&
+          item.selectedSize === product.selectedSize
       );
 
       if (existingItem) {
         return prevCart.map((item) =>
-          item.id === product.id && item.selectedSize === product.selectedSize
+          item.cartItemId === existingItem.cartItemId
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
-      } else {
-        return [...prevCart, { ...product, quantity }];
       }
+
+      // NEW: create stable cartItemId
+      return [
+        ...prevCart,
+        {
+          cartItemId: crypto.randomUUID(),
+          productId: product.id,
+          ...product,
+          quantity,
+        },
+      ];
     });
   };
 
@@ -60,6 +69,43 @@ export const CartProvider = ({ children }) => {
     0
   );
 
+  const updateSize = (id, oldSize, newSize) => {
+    setCart((prevCart) => {
+      const existingItem = prevCart.find(
+        (item) => item.id === id && item.selectedSize === oldSize
+      );
+
+      if (!existingItem) return prevCart;
+
+      const updatedCart = prevCart.filter(
+        (item) => !(item.id === id && item.selectedSize === oldSize)
+      );
+
+      // Check if same product + new size already exists
+      const mergedTarget = updatedCart.find(
+        (item) => item.id === id && item.selectedSize === newSize
+      );
+
+      if (mergedTarget) {
+        // Merge quantities instead of creating duplicate
+        return updatedCart.map((item) =>
+          item.id === id && item.selectedSize === newSize
+            ? { ...item, quantity: item.quantity + existingItem.quantity }
+            : item
+        );
+      }
+
+      // Add as new size
+      return [
+        ...updatedCart,
+        {
+          ...existingItem,
+          selectedSize: newSize,
+        },
+      ];
+    });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -68,6 +114,7 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         decreaseQuantity,
         clearCart,
+        updateSize,
         totalPrice,
       }}
     >

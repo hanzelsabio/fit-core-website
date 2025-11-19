@@ -117,12 +117,10 @@ function ProductDetails() {
 
           {/* RIGHT */}
           <div className="space-y-4 text-center md:text-left">
-            <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">
+            <h1 className="text-xl md:text-2xl font-medium text-gray-800">
               {product.title}
             </h1>
-            <p className="text-lg font-medium text-gray-900">
-              PHP {product.price}
-            </p>
+            <p className="text-md text-gray-900">PHP {product.price}</p>
 
             {/* --- Sizes Section --- */}
             <div className="mt-4 flex flex-col items-center md:items-start">
@@ -130,7 +128,7 @@ function ProductDetails() {
                 <>
                   {/* Selected Size Label */}
                   {selectedSize && (
-                    <p className="text-gray-700 font-medium mb-2">
+                    <p className="text-gray-700 text-xs font-medium mb-5">
                       Size: <span className="font-medium">{selectedSize}</span>
                     </p>
                   )}
