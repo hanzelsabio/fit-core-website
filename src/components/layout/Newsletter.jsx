@@ -27,7 +27,7 @@ export default function Newsletter() {
 
         {/* Newsletter Form */}
         {submitted ? (
-          <div className="success_message py-3 px-5 inline-block font-small">
+          <div className="success_message py-3 px-5 mb-8 inline-block text-sm font-small">
             Thanks for subscribing! Check your inbox soon.
           </div>
         ) : (
