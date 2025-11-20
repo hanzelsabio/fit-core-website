@@ -19,7 +19,7 @@ function Cart() {
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <section className="max-w-4xl mx-auto px-4">
+    <section className="max-w-4xl mx-auto px-8">
       {cart.length === 0 ? (
         <div className="flex flex-col items-center justify-center min-h-[80vh] text-center">
           <h2 className="text-xl font-bold mb-2 text-center">
@@ -49,7 +49,7 @@ function Cart() {
             {cart.map((item) => (
               <li
                 key={`${item.id}-${item.selectedSize || "default"}`}
-                className="flex justify-between items-center p-4"
+                className="flex justify-between items-center py-4"
               >
                 <div className="flex items-center gap-4">
                   {item.image && (
@@ -133,7 +133,7 @@ function Cart() {
             ))}
           </ul>
 
-          <div className="text-right mt-10 px-4">
+          <div className="text-right mt-10 py-4">
             <p className="text-md font-semibold uppercase">
               total: PHP {totalPrice.toFixed(2)}
             </p>

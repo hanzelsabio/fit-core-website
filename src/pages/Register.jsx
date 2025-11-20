@@ -19,7 +19,7 @@ export default function Register() {
 
   return (
     <div className="flex justify-center items-center min-h-[80vh]">
-      <form onSubmit={handleSubmit} className="w-full max-w-md p-6">
+      <form onSubmit={handleSubmit} className="w-full max-w-md p-8">
         <h1 className="text-2xl mb-10 text-center uppercase">Sign Up</h1>
         <input
           type="text"

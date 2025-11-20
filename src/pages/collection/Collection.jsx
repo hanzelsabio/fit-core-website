@@ -9,7 +9,7 @@ function Collection() {
 
   if (loading)
     return (
-      <section className="max-w-6xl mx-auto py-10 px-4">
+      <section className="max-w-6xl mx-auto py-10 px-8">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 animate-pulse">
           {Array.from({ length: 8 }).map((_, index) => (
             <div key={index} className="p-4 flex flex-col justify-between">
@@ -24,7 +24,7 @@ function Collection() {
   if (error) return <p className="text-center text-red-500 mt-10">{error}</p>;
 
   return (
-    <section className="max-w-6xl mx-auto py-10 px-4">
+    <section className="max-w-6xl mx-auto py-10 px-8">
       <h2 className="text-xl font-small mb-6 text-center">
         Brand Oversized Tee
       </h2>
@@ -50,7 +50,7 @@ function Collection() {
           </Link>
         ))}
       </div>
-      <div className="max-w-6xl mx-auto mt-10 py-10 px-4">
+      <div className="max-w-6xl mx-auto mt-10 py-10 px-8">
         <h2 className="text-xl font-small mb-6 text-center">Brand Box Tee</h2>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (

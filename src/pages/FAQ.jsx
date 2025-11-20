@@ -10,7 +10,7 @@ function FAQ() {
 
   return (
     <section className="bg-white text-center py-12 min-h-[80vh]">
-      <div className="brand-faq max-w-5xl mx-auto p-6">
+      <div className="brand-faq max-w-5xl mx-auto p-8">
         <h2 className="faq-title text-2xl font-bold uppercase mb-8">
           Frequently Asked Questions
         </h2>

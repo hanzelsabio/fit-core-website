@@ -38,12 +38,12 @@ function ContactPage() {
 
   return (
     <section className="bg-white text-center py-12 min-h-[80vh]">
-      <div className="brand-contact max-w-2xl mx-auto p-6">
+      <div className="brand-contact max-w-2xl mx-auto p-8">
         <h2 className="contact-title text-2xl font-bold uppercase mb-8">
           Contact Us
         </h2>
 
-        <form onSubmit={handleSubmit} className="p-4 text-left space-y-6">
+        <form onSubmit={handleSubmit} className="text-sm text-left space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <input
@@ -52,7 +52,7 @@ function ContactPage() {
                 value={formData.firstName}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 px-4 py-2 focus:outline-none"
+                className="w-full border border-gray-300 px-8 py-3.5 focus:outline-none"
                 placeholder="First Name"
               />
             </div>
@@ -63,7 +63,7 @@ function ContactPage() {
                 value={formData.lastName}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 px-4 py-2 focus:outline-none"
+                className="w-full border border-gray-300 px-8 py-3.5 focus:outline-none"
                 placeholder="Last Name"
               />
             </div>
@@ -75,7 +75,7 @@ function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 px-4 py-2 focus:outline-none"
+                className="w-full border border-gray-300 px-8 py-3.5 focus:outline-none"
                 placeholder="Email"
               />
             </div>
@@ -86,7 +86,7 @@ function ContactPage() {
                 value={formData.number}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 px-4 py-2 focus:outline-none"
+                className="w-full border border-gray-300 px-8 py-3.5 focus:outline-none"
                 placeholder="Phone Number"
               />
             </div>
@@ -99,7 +99,7 @@ function ContactPage() {
               onChange={handleChange}
               required
               rows="5"
-              className="w-full border border-gray-300 px-4 py-2 focus:outline-none"
+              className="w-full border border-gray-300 px-8 py-3.5 focus:outline-none"
               placeholder="Write your message here..."
             ></textarea>
           </div>
@@ -107,7 +107,7 @@ function ContactPage() {
           <div className="text-center">
             <button
               type="submit"
-              className="bg-black text-white px-6 py-2 hover:bg-gray-800 transition duration-300"
+              className="bg-black text-white px-8 py-3.5 hover:bg-gray-800 transition duration-300"
               style={{ cursor: "pointer" }}
             >
               Send Message

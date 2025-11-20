@@ -18,16 +18,16 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="bg-white py-12 px-8 sm:px-12">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-small md:text-xl font-bold text-gray-800 m-2 uppercase">
+    <section className="newsletter_section bg-white py-12 px-8 sm:px-12">
+      <div className="newsletter_body max-w-4xl mx-auto text-center">
+        <h2 className="newsletter_heading md:text-xl font-bold text-gray-800 m-2 uppercase">
           Newsletter
         </h2>
         <p className="m-4">Receive latest updates</p>
 
         {/* Newsletter Form */}
         {submitted ? (
-          <div className="py-3 px-5 inline-block font-small">
+          <div className="success_message py-3 px-5 inline-block font-small">
             Thanks for subscribing! Check your inbox soon.
           </div>
         ) : (
@@ -53,7 +53,7 @@ export default function Newsletter() {
         )}
 
         {/* Social Section */}
-        <div className="flex items-center justify-center mt-8 gap-4">
+        <div className="newsletter_socials flex items-center justify-center mt-8 gap-4">
           <a
             href="https://instagram.com"
             target="_blank"

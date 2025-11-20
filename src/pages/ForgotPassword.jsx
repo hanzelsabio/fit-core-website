@@ -15,7 +15,7 @@ export default function ForgotPassword() {
 
   return (
     <div className="flex justify-center items-center min-h-[80vh]">
-      <form onSubmit={handleSubmit} className="w-full max-w-md p-6">
+      <form onSubmit={handleSubmit} className="w-full max-w-md p-8">
         <h1 className="text-2xl mb-5 text-center">RESET PASSWORD</h1>
         <p className="text-sm mb-10 text-center">
           Enter your email and we will send you a password reset link.
