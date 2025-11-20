@@ -19,14 +19,14 @@ export default function Register() {
 
   return (
     <div className="flex justify-center items-center min-h-[80vh]">
-      <form onSubmit={handleSubmit} className="w-full max-w-md p-8">
+      <form onSubmit={handleSubmit} className="w-full text-xs max-w-md p-8">
         <h1 className="text-2xl mb-10 text-center uppercase">Sign Up</h1>
         <input
           type="text"
           placeholder="First Name"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
-          className="w-full border outline-none p-2 mb-5"
+          className="w-full px-4 py-3.5 mb-5 border border-gray-300 focus:outline-none focus:outline-none"
           required
         />
         <input
@@ -34,7 +34,7 @@ export default function Register() {
           placeholder="Last Name"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
-          className="w-full border outline-none p-2 mb-5"
+          className="w-full px-4 py-3.5 mb-5 border border-gray-300 focus:outline-none focus:outline-none"
           required
         />
         <input
@@ -42,7 +42,7 @@ export default function Register() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border outline-none p-2 mb-5"
+          className="w-full px-4 py-3.5 mb-5 border border-gray-300 focus:outline-none focus:outline-none"
           required
         />
         <input
@@ -50,7 +50,7 @@ export default function Register() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border outline-none p-2 mb-5"
+          className="w-full px-4 py-3.5 mb-5 border border-gray-300 focus:outline-none focus:outline-none"
           required
         />
         <input
@@ -58,16 +58,16 @@ export default function Register() {
           placeholder="Birthday"
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
-          className="w-full border outline-none p-2 mb-5"
+          className="w-full px-4 py-3.5 mb-5 border border-gray-300 focus:outline-none focus:outline-none"
           required
         />
         <button
-          className="w-full bg-black text-white py-2 hover:bg-gray-900"
+          className="w-full bg-black text-white py-3.5 hover:bg-gray-900"
           style={{ cursor: "pointer" }}
         >
           Create Account
         </button>
-        <p className="text-sm text-center mt-3">
+        <p className="text-sm text-center mt-5">
           Already have an account?{" "}
           <Link to="/login" className="underline underline-offset-3">
             Login

@@ -16,14 +16,14 @@ export default function Login() {
 
   return (
     <div className="flex justify-center items-center min-h-[80vh]">
-      <form onSubmit={handleSubmit} className="w-full max-w-md p-8">
+      <form onSubmit={handleSubmit} className="w-full text-xs max-w-md p-8">
         <h1 className="text-2xl mb-10 text-center">LOGIN</h1>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="E-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border outline-none p-2 mb-5"
+          className="w-full px-4 py-3.5 mb-5 border border-gray-300 focus:outline-none focus:outline-none"
           required
         />
         <input
@@ -31,14 +31,14 @@ export default function Login() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border outline-none p-2 mb-5"
+          className="w-full px-4 py-3.5 mb-5 border border-gray-300 focus:outline-none focus:outline-none"
           required
         />
         <p className="text-sm text-center underline underline-offset-3 mb-5">
           <Link to="/forgotpassword">Forgot your password? </Link>
         </p>
         <button
-          className="w-full bg-black text-white py-2 hover:bg-gray-900"
+          className="w-full bg-black text-xs text-white py-3.5 hover:bg-gray-900"
           style={{ cursor: "pointer" }}
         >
           Login

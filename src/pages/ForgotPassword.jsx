@@ -15,26 +15,26 @@ export default function ForgotPassword() {
 
   return (
     <div className="flex justify-center items-center min-h-[80vh]">
-      <form onSubmit={handleSubmit} className="w-full max-w-md p-8">
+      <form onSubmit={handleSubmit} className="w-full max-w-md text-xs px-8">
         <h1 className="text-2xl mb-5 text-center">RESET PASSWORD</h1>
-        <p className="text-sm mb-10 text-center">
-          Enter your email and we will send you a password reset link.
+        <p className="text-sm mb-5 text-center">
+          Enter email and we will send you a password reset link.
         </p>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="E-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border outline-none p-2 mb-5"
+          className="w-full px-4 py-3.5 mb-5 border border-gray-300 focus:outline-none focus:outline-none"
           required
         />
         <button
-          className="w-full bg-black text-white py-2 hover:bg-gray-900"
+          className="w-full bg-black text-white py-3.5 hover:bg-gray-900"
           style={{ cursor: "pointer" }}
         >
           Reset Password
         </button>
-        <p className="text-sm text-center mt-3">
+        <p className="text-sm text-center mt-5">
           <Link to="/" className="underline underline-offset-3">
             Cancel
           </Link>
