@@ -38,7 +38,7 @@ function Cart() {
       ) : (
         <div className="min-h-[80vh] pt-10 pb-20">
           <div className="mb-10">
-            <h2 className="text-xl font-bold pb-2 text-center">
+            <h2 className="text-xl font-semibold pb-2 text-center">
               Your Shopping Bag
             </h2>
             <p className="text-center text-sm text-gray-500">

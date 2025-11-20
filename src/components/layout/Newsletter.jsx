@@ -23,7 +23,7 @@ export default function Newsletter() {
         <h2 className="newsletter_heading md:text-xl font-bold text-gray-800 m-2 uppercase">
           Newsletter
         </h2>
-        <p className="m-4">Receive latest updates</p>
+        <p className="text-sm mt-2 mb-5">Receive latest updates</p>
 
         {/* Newsletter Form */}
         {submitted ? (
@@ -33,14 +33,14 @@ export default function Newsletter() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row text-sm items-center justify-center gap-3"
+            className="flex flex-col sm:flex-row text-xs items-center justify-center gap-3 mb-8"
           >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail"
-              className="w-full sm:w-80 px-4 py-3.5 border border-gray-300 focus:outline-none focus:outline-none"
+              className="w-full sm:w-70 px-4 py-3.5 border border-gray-300 focus:outline-none focus:outline-none"
             />
             <button
               type="submit"
@@ -53,7 +53,7 @@ export default function Newsletter() {
         )}
 
         {/* Social Section */}
-        <div className="newsletter_socials flex items-center justify-center mt-8 gap-4">
+        <div className="newsletter_socials flex items-center justify-center gap-4">
           <a
             href="https://instagram.com"
             target="_blank"

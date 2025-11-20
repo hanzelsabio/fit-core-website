@@ -26,7 +26,9 @@ function NewArrivals() {
 
   return (
     <section className="max-w-6xl mx-auto py-10 px-8">
-      <h2 className="text-xl font-small mb-6 text-center">NEW ARRIVALS</h2>
+      <h2 className="text-xl font-small mb-6 text-center uppercase">
+        New Arrivals
+      </h2>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <Link

@@ -104,7 +104,7 @@ function ProductDetails() {
       )}
 
       {/* Product Details */}
-      <section className="max-w-6xl mx-auto py-12 px-8">
+      <section className="max-w-6xl mx-auto py-20 px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* LEFT */}
           <div className="flex flex-col items-center">
@@ -197,8 +197,8 @@ function ProductDetails() {
       </section>
 
       {/* Featured Products */}
-      <section className="max-w-6xl mx-auto py-10 px-8 border-t border-gray-200 mt-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+      <section className="max-w-6xl mx-auto py-10 px-8">
+        <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">
           Featured Products
         </h2>
         {featured.length > 0 ? (
@@ -230,8 +230,8 @@ function ProductDetails() {
       </section>
 
       {/* Recently Viewed */}
-      <section className="max-w-6xl mx-auto py-10 px-8 border-t border-gray-200 mt-10">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+      <section className="max-w-6xl mx-auto py-10 px-8">
+        <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">
           Recently Viewed
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
