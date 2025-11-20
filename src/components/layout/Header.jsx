@@ -42,10 +42,10 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white relative z-50">
-      <nav className="container mx-auto relative flex items-center justify-between py-8 px-6">
+    <header className="header_section bg-white relative z-50">
+      <nav className="header_navigation container mx-auto relative flex items-center justify-between py-8 px-6">
         {/* Left side */}
-        <div className="flex-1 flex items-center gap-6">
+        <div className="header_left_body flex-1 flex items-center gap-6">
           <button
             onClick={() => setSidebarOpen(true)}
             className="flex items-center text-gray-700 hover:text-red-600 transition"
@@ -71,7 +71,7 @@ export default function Header() {
         </div>
 
         {/* Right side */}
-        <div className="flex-1 flex justify-end items-center gap-6 text-gray-700">
+        <div className="header_right_body flex-1 flex justify-end items-center gap-6 text-gray-700">
           <Link
             to="/cart"
             className="flex items-center hover:text-red-600 transition relative"
@@ -107,18 +107,18 @@ export default function Header() {
       {/* Sidebar overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+          className="sidebar_overlay fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-80 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`sidebar_body fixed top-0 left-0 h-full w-80 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex justify-between items-center p-6">
+        <div className="sidebar_content flex justify-between items-center p-6">
           <h2 className="text-xl font-semibold text-red-600"></h2>
           <button
             onClick={() => setSidebarOpen(false)}
@@ -129,7 +129,7 @@ export default function Header() {
           </button>
         </div>
 
-        <ul className="flex flex-col p-6 space-y-4 text-gray-700">
+        <ul className="sidebar_nav_links flex flex-col p-6 space-y-4 text-gray-700">
           <li>
             <Link
               to="/newarrivals"
@@ -178,7 +178,7 @@ export default function Header() {
         </ul>
 
         {/* Social Media */}
-        <div className="absolute bottom-6 px-6 w-full flex gap-6 text-gray-600">
+        <div className="sidebar_socials absolute bottom-6 px-6 w-full flex gap-6 text-gray-600">
           <a
             href="https://instagram.com"
             target="_blank"

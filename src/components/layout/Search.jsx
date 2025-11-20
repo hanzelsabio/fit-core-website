@@ -54,16 +54,16 @@ export default function SearchBar({ isOpen, onClose, onSearch, results = [] }) {
   if (!isOpen) return null;
 
   return (
-    <div
-      className={`fixed top-10 left-0 w-full z-50 transition-all duration-300 ease-out ${
+    <section
+      className={`search_section fixed top-10 left-0 w-full z-50 transition-all duration-300 ease-out ${
         animate
           ? "opacity-100 translate-y-0"
           : "opacity-0 -translate-y-10 pointer-events-none"
       }`}
     >
       {/* Search Bar Section */}
-      <div className="bg-white">
-        <div className="container mx-auto flex items-center justify-between py-8 px-6">
+      <div className="search_body bg-white">
+        <div className="search_content container mx-auto flex items-center justify-between py-8 px-6">
           <Search />
           <form
             onSubmit={handleSubmit}
@@ -102,7 +102,7 @@ export default function SearchBar({ isOpen, onClose, onSearch, results = [] }) {
 
       {/* Results Section */}
       <div
-        className={`bg-white overflow-y-auto max-h-[calc(100vh-140px)] transition-all duration-300 ${
+        className={`search_results_body bg-white overflow-y-auto max-h-[calc(100vh-140px)] transition-all duration-300 ${
           animate ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
         }`}
       >
@@ -137,6 +137,6 @@ export default function SearchBar({ isOpen, onClose, onSearch, results = [] }) {
           )
         ) : null}
       </div>
-    </div>
+    </section>
   );
 }
